@@ -41,4 +41,4 @@ for p in paraphrases:
         log_probs[token].append(log_prob)
 
 for token in log_probs:
-    print(f"Log probabilities for '{token}': {log_probs[token]}")
+    print(f"Log Probs for '{token}': {log_probs[token]}") 
