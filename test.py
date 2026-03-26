@@ -1,6 +1,7 @@
 import spacy
 from spacy.tokens import Doc
 import numpy as np
+import matplotlib.pyplot as plt
 # original prompt: Paraphrase the following sentence: The book that the teacher gave me was long.
 
 
@@ -26,8 +27,7 @@ trees = [get_dependency_tree(p) for p in paraphrases]
 def tree_edit_distance(tree1, tree2):
     arcs1 = set(tree1)
     arcs2 = set(tree2)
-    return len(arcs1 - arcs2) + len(arcs2 - arcs1)  # Symmetric difference
-
+    return len(arcs1 - arcs2) + len(arcs2 - arcs1)  # symmetric difference (difference in arcs)
 # distance matrix
 distance_matrix = np.zeros((len(trees), len(trees)))
 for i in range(len(trees)):
@@ -37,9 +37,7 @@ for i in range(len(trees)):
 print("Tree Edit Distance Matrix:")
 print(distance_matrix)
 
-# later
-# import matplotlib.pyplot as plt
-# plt.imshow(distance_matrix, cmap="viridis")
-# plt.colorbar()
-# plt.title("Tree Edit Distance Between Paraphrases")
-# plt.show()
+plt.imshow(distance_matrix, cmap="viridis")
+plt.colorbar()
+plt.title("Tree Edit Distance Between Paraphrases")
+plt.show()
