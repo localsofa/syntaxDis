@@ -11,3 +11,7 @@ all scripts written and used for my syntax research extension on cycliclity in L
 - utilizes sPaCy tokenizer to parse dependencies in each paraphrased sentence
 - calculates and compares "arcs" in dependencies
 - returns a matrix with comparison values, where 0 = identical
+
+# logProbs.py
+- calculates logprobs of specific words
+- compares logprob results of word across all paraphrases
