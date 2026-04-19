@@ -1,11 +1,40 @@
 # syntaxDis
 all scripts written and used for my syntax research extension on cycliclity in LLMs
 
-# attentionHead.py
-- calculates all attention weights across paraphrases
-- compresses all heads and layers into one array
-- caclulates differences in processing across sentences to determine 2-period cyclicity
-- additional function: layer-specific attention analysis (set up for layer 8)
+# attentionHeads.py
+1. tokenize sentence
+uses a pretrained HuggingFace tokenizer (default: gpt2) to convert text into subword tokens
+
+
+2. extract attention matrices
+retrieves full attention tensors across all layers and heads
+averages across heads and layers and produces a global attention map
+
+
+3. user input of syntactic roles
+* wh-elements (e.g. what, which, who)
+* verbs (matrix and embedded predicates)
+* subjects / objects
+* complementisers / clause markers 
+
+
+4. compute structural attention relations
+computes directed attention scores such as:
+
+* WH → verb (matrix / embedded)
+* subject → verb
+* object → verb
+* clause marker → predicate head
+
+each value represents mean attention from source token(s) to target token(s)
+
+
+5. tracks paraphrase dynamics
+* attention similarity matrices
+* consecutive similarity (n → n+1)
+* skip similarity (n → n+2)
+* effect size (Cohen’s d) 
+
 
 # dependencies.py
 - utilizes sPaCy tokenizer to parse dependencies in each paraphrased sentence
