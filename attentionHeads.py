@@ -61,7 +61,7 @@ def get_attention(sentence):
         outputs = model(**inputs, output_attentions=True)
 
     attentions = torch.stack(outputs.attentions)
-    avg_attention = attentions.mean(dim=(0, 1, 2))  # full average
+    avg_attention = attentions.mean(dim=1)  # averages heads
     return avg_attention, inputs
 
 
@@ -134,13 +134,16 @@ def extract_relations(sentence):
 
     structure = guess_structure(tokens)
 
+    # computes averages in vP submatrix (verb & object region) and COMP submatrix (WH & complement region)
+    # if stable across all forms --> structural dependency
     def avg_attention(src, tgt):
         vals = []
         for s in src:
             for t in tgt:
                 if s < attn.shape[0] and t < attn.shape[0]:
                     vals.append(attn[s, t].item())
-        return np.mean(vals) if vals else np.nan
+        #return np.mean(vals) if vals else np.nan
+        return np.max(vals) if vals else np.nan # trying smth here, will prob go back to np.mean
 
     return {
         "wh→verbone": avg_attention(structure["one"], structure["verbone"]),
