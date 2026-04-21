@@ -143,8 +143,7 @@ def extract_relations(sentence):
             for t in tgt:
                 if s < attn.shape[0] and t < attn.shape[0]:
                     vals.append(attn[s, t].item())
-        #return np.mean(vals) if vals else np.nan
-        return np.max(vals) if vals else np.nan # trying smth here, will prob go back to np.mean
+        return np.mean(vals) if vals else np.nan
 
     return {
         "wh→verbone": avg_attention(structure["one"], structure["verbone"]),
