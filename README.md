@@ -1,5 +1,5 @@
 # Notice:
-all scripts are written using the module and Python versions which comply with the UoY's Viking server. model calling may have to be changed when using more modern version on "transformers" etc
+all scripts are written using the module and Python versions which comply with the UoY's Viking server. model calling may have to be changed when using more modern versions of "transformers" etc
 
 # syntaxDis
 all scripts written and used for my syntax research extension on cycliclity in LLMs
