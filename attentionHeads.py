@@ -1,3 +1,7 @@
+# -----------------------
+# IMPORTS
+# -----------------------
+
 import numpy as np
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -61,7 +65,8 @@ def get_attention(sentence):
         outputs = model(**inputs, output_attentions=True)
 
     attentions = torch.stack(outputs.attentions)
-    avg_attention = attentions.mean(dim=(0, 1, 2))
+    avg_attention = attentions.mean(dim=(0, 1, 2))  # full average
+    #avg_attention = attentions.mean(dim=1)  # averages heads -- this would be good to do, but honestly i'd have to change so much of the script to accodmodate the vector 
     return avg_attention, inputs
 
 
@@ -142,8 +147,7 @@ def extract_relations(sentence):
             for t in tgt:
                 if s < attn.shape[0] and t < attn.shape[0]:
                     vals.append(attn[s, t].item())
-        #return np.mean(vals) if vals else np.nan
-        return np.max(vals) if vals else np.nan # trying smth here, will prob go back to np.mean
+        return np.mean(vals) if vals else np.nan
 
     return {
         "wh→verbone": avg_attention(structure["one"], structure["verbone"]),
