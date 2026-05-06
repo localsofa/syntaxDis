@@ -61,7 +61,7 @@ def get_attention(sentence):
         outputs = model(**inputs, output_attentions=True)
 
     attentions = torch.stack(outputs.attentions)
-    avg_attention = attentions.mean(dim=1)  # averages heads
+    avg_attention = attentions.mean(dim=(0, 1, 2))
     return avg_attention, inputs
 
 
