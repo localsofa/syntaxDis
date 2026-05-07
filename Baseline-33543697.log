@@ -1,0 +1,39 @@
+Loaded 9 paraphrases
+
+--- DOMAIN ATTENTION ---
+vP_internal: [0.31287697537077797, 0.3220695017112626, 0.32150645719634163, 0.3216729594601525, 0.32151864137914443, 0.3132135474847423, 0.43972305208444595, 0.31313034395376843, 0.3018726565771633]
+CP_internal: [nan, nan, nan, nan, nan, nan, nan, nan, nan]
+cross_vP_CP: [nan, nan, nan, nan, nan, nan, nan, nan, nan]
+cross_CP_vP: [nan, nan, nan, nan, nan, nan, nan, nan, nan]
+
+--- STABILITY ---
+vP stability: 0.039391935855311144
+CP stability: nan
+Cross stability: nan
+
+--- DOMAIN SEPARATION ---
+Scores: [nan, nan, nan, nan, nan, nan, nan, nan, nan]
+Mean separation: nan
+
+--- T-TEST ---
+t = --
+p = --
+
+============================
+ Job utilisation efficiency
+============================
+
+Job ID: 33543697
+Cluster: viking2.yor.alces.network
+User/Group: pmk525/clusterusers
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:04
+CPU Efficiency: 44.44% of 00:00:09 core-walltime
+Job Wall-clock time: 00:00:09
+Memory Utilized: 3.61 MB
+Memory Efficiency: 0.02% of 16.00 GB
+ Requested wall clock time: 00:15:00
+    Actual wall clock time: 00:00:09
+Wall clock time efficiency: 1.0%
+           Job queued time: 00:00:15

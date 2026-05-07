@@ -1,0 +1,39 @@
+Loaded 9 paraphrases
+
+--- DOMAIN ATTENTION ---
+vP_internal: [0.07410094700753689, 0.07191606424748898, 0.07410094700753689, 0.07191606424748898, 0.07252631522715092, 0.07191606424748898, 0.07123484089970589, 0.07191606424748898, 0.07410094700753689]
+CP_internal: [nan, nan, nan, nan, 0.09992734342813492, nan, 0.10217741876840591, nan, nan]
+cross_vP_CP: [nan, nan, nan, nan, 0.08589005470275879, nan, 0.08757366612553596, nan, nan]
+cross_CP_vP: [nan, nan, nan, nan, 0.0, nan, 0.0, nan, nan]
+
+--- STABILITY ---
+vP stability: 0.0010794399123066076
+CP stability: 0.001125037670135498
+Cross stability: 0.000841805711388588
+
+--- DOMAIN SEPARATION ---
+Scores: [nan, nan, nan, nan, 0.00033677462488412857, nan, -0.0008675362914800644, nan, nan]
+Mean separation: -0.0002653808332979679
+
+--- T-TEST ---
+t = -1.0540738034989672
+p = 0.314451929063235
+
+============================
+ Job utilisation efficiency
+============================
+
+Job ID: 33543701
+Cluster: viking2.yor.alces.network
+User/Group: pmk525/clusterusers
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:03
+CPU Efficiency: 42.86% of 00:00:07 core-walltime
+Job Wall-clock time: 00:00:07
+Memory Utilized: 3.60 MB
+Memory Efficiency: 0.02% of 16.00 GB
+ Requested wall clock time: 00:15:00
+    Actual wall clock time: 00:00:07
+Wall clock time efficiency: 0.8%
+           Job queued time: 00:00:11
