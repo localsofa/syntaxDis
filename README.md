@@ -2,7 +2,7 @@
 all scripts are written using the module and Python versions which comply with the UoY's Viking server. model calling may have to be changed when using more modern versions of "transformers" etc
 
 # syntaxDis
-all scripts written and used for my syntax research extension on cycliclity in LLMs
+all scripts written and used for my syntax research extension on cycliclity in LLMs; attentionHeads.py was the main one i ended up using
 
 # attentionHeads.py
 1. tokenize sentence
